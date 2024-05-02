@@ -71,6 +71,12 @@ store. Xcode 15.1 is now the minimum supported version.
 * The reported download progress for flexible sync Realms was incorrect. It is now replaced by a
   progress estimate, which is derived by the server based on historical data and other heuristics.
   ([#8476](https://github.com/realm/realm-swift/issues/8476))
+* Add `@ObservedSectionedResults.remove(atOffsets:, section:)` which adds the ability to 
+  remove a Realm Object when using `onDelete` on `ForEach` in a SwiftUI `List`.
+
+### Fixed
+* Deleting a Realm Object used in a `@ObservedSectionedResults` collection in `SwiftUI`
+  would cause a crash during the diff on the `View`. ([#8294](https://github.com/realm/realm-swift/issues/8294), since v10.29.0)
 
 <!-- ### Breaking Changes - ONLY INCLUDE FOR NEW MAJOR version -->
 
